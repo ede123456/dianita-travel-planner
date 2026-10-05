@@ -1,2 +1,3 @@
 ﻿User-agent: *
 Allow: /
+Sitemap: https://dianita-travel-planner.edenymoralesrojas.workers.dev/sitemap.xml
