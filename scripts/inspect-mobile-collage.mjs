@@ -1,0 +1,10 @@
+﻿import {chromium} from '@playwright/test';
+const browser=await chromium.launch({channel:'chrome',headless:true});
+const page=await browser.newPage({viewport:{width:390,height:900},reducedMotion:'reduce'});
+await page.goto('http://127.0.0.1:5175/',{waitUntil:'networkidle'});
+await page.locator('.hero-postcard-paris img').evaluate(i=>i.decode());
+console.log(await page.locator('.hero-postcard-paris img').evaluate(e=>({source:e.currentSrc,width:e.clientWidth,height:e.clientHeight,natural:e.naturalWidth,rect:e.getBoundingClientRect().toJSON(),opacity:getComputedStyle(e).opacity})));
+await page.screenshot({path:'qa/redesign/mobile-viewport.png'});
+await page.evaluate(()=>scrollTo(0,450));
+await page.screenshot({path:'qa/redesign/mobile-photos.png'});
+await browser.close();

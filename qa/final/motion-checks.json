@@ -1,0 +1,36 @@
+{
+  "idleAnimations": [
+    {
+      "name": "float-paris",
+      "duration": "8s",
+      "transform": "matrix(1, 0, 0, 1, 1, -6.5)"
+    },
+    {
+      "name": "float-orlando",
+      "duration": "11s",
+      "transform": "matrix(1, 0, 0, 1, 6.82135, 10.8214)"
+    },
+    {
+      "name": "float-newyork",
+      "duration": "13s",
+      "transform": "matrix(1, 0, 0, 1, 6.8497, -5.90751)"
+    }
+  ],
+  "diary": {
+    "width": 390,
+    "scroll": 1369
+  },
+  "runtimeErrors": [],
+  "checks": [
+    "independent idle motion",
+    "hover pause and straightening",
+    "steady headline",
+    "supplied sky",
+    "global motion pause/resume",
+    "reduced motion",
+    "mobile floating",
+    "horizontal mobile diary",
+    "tablet",
+    "dark mode"
+  ]
+}

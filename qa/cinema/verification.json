@@ -1,0 +1,40 @@
+{
+  "media": {
+    "src": "http://127.0.0.1:5175/videos/disney-dianita.mp4",
+    "width": 854,
+    "height": 480,
+    "muted": true,
+    "loop": true,
+    "inline": true,
+    "controls": false,
+    "autoplay": true
+  },
+  "layouts": [
+    {
+      "width": 1440,
+      "videoWidth": 392,
+      "videoHeight": 536
+    },
+    {
+      "width": 1024,
+      "videoWidth": 379,
+      "videoHeight": 519
+    },
+    {
+      "width": 768,
+      "videoWidth": 265,
+      "videoHeight": 365
+    },
+    {
+      "width": 390,
+      "videoWidth": 335,
+      "videoHeight": 440
+    },
+    {
+      "width": 320,
+      "videoWidth": 263,
+      "videoHeight": 345
+    }
+  ],
+  "errors": []
+}

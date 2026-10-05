@@ -1,0 +1,10 @@
+﻿import {readFile,writeFile} from 'node:fs/promises';
+let source=await readFile('src/TravelWorld.jsx','utf8');
+source=source.replace("onOpen, note })", "onOpen, note, sizes })");
+source=source.replace('<RealPhoto id={id} eager={eager} />','<RealPhoto id={id} eager={eager} sizes={sizes} />');
+source=source.replaceAll('eager onOpen={onOpen}', 'eager sizes="(max-width: 700px) 45vw, (max-width: 1100px) 210px, 270px" onOpen={onOpen}');
+await writeFile('src/TravelWorld.jsx',source);
+let html=await readFile('index.html','utf8');html=html.replace('imagesizes="(max-width: 700px) 85vw, 35vw"','imagesizes="(max-width: 700px) 45vw, (max-width: 1100px) 210px, 270px"');
+html=html.replace('    <title>', '    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/dm-sans/files/dm-sans-latin-600-normal.woff2" />\n    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-400-italic.woff2" />\n    <link rel="preload" as="font" type="font/woff2" crossorigin href="/node_modules/@fontsource/cormorant-garamond/files/cormorant-garamond-latin-500-normal.woff2" />\n    <title>');
+await writeFile('index.html',html);
+let prep=await readFile('scripts/prepare-real-photos.mjs','utf8');prep=prep.replace('quality:82','quality:width === 480 ? 72 : 78');await writeFile('scripts/prepare-real-photos.mjs',prep);
